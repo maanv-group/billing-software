@@ -6,9 +6,9 @@
     <section class="my-5">
         <div class="row m-0 justify-content-center">
             <div class="col-xxl-3 col-xl-5 col-lg-7 col-md-10 col-12">
-                @error('error')
+                @error('auth_error')
                 <div class="alert alert-danger">
-                    {{ $message }}
+                    {{ $message }} <b><a class="alert-link" href="{{url('/register')}} ">Register Now</a></b>
                 </div>
                 @enderror
                 <form method="post" action="{{ url('/login') }}">

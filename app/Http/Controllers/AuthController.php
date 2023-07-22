@@ -36,9 +36,9 @@ class AuthController extends Controller
             }
         }
         else {
-            session()->flash('error', 'User does not exist!');
+            $error = "User does not exist!";
             return back()->withErrors([
-                'error' => 'User does not exist!',
+                'auth_error' => $error,
             ]);
         }
     }
