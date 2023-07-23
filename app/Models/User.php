@@ -50,4 +50,19 @@ class User extends Authenticatable
         $response = DB::table('users')->where('username',$requestData['username'])->first();
         return $response;
     }
+
+    public static function findBy($keyValueArray){
+        $response = [];
+        foreach ($keyValueArray as $key => $value) {
+            array_push($response, DB::table('users')->where($key, $value)->get()->toArray());
+        }
+        return $response;
+    }
+
+    public static function updateUserStatus($id){
+        $affected = DB::table('users')->where('id', $id)->update([
+            'updated_at' => DB::raw('CURRENT_TIMESTAMP')
+        ]);
+        return $affected;
+    }
 }

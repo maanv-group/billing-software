@@ -22,12 +22,13 @@ class AuthController extends Controller
             if (Auth::attempt(['username' => $data['username'], 'password' => $data['password']])) {
                 if(User::find($data) != null){
                     $user = User::find($data);
+                    $affected = User::updateUserStatus($user->id);
                     if(Hash::check($data['password'], $user->password)){
                         // echo $user->role;
                         $request->session()->regenerate();
                         session(['user.role' => $user->role]);
                         if($user->role == "Admin"){
-                            return redirect()->intended('/dashboard');
+                            return redirect()->intended(route('user.dashboard', Auth::user()->username));
                         } else {
                             return redirect()->intended();
                         }
@@ -41,5 +42,11 @@ class AuthController extends Controller
                 'auth_error' => $error,
             ]);
         }
+    }
+
+    public function unauthenticated(){
+        Auth::logout();
+        session()->flush();
+        return redirect('/login');
     }
 }
