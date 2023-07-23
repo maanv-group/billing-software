@@ -1,9 +1,9 @@
 <br/>
 <p align="center">
-  <h3 align="center">ReadME Generator</h3>
+  <h3 align="center">ERP Software</h3>
 
   <p align="center">
-    An Awesome ReadME Generator To Jumpstart Your Projects!
+    A Progressive ERP Solution for Most of the POS Management Services!
     <br/>
     <br/>
     <a href="https://github.com/maanv-group/billing-software/issues">Report Bug</a>
