@@ -10,6 +10,7 @@ class DashboardController extends Controller
     public function index(){
         $userId = Auth::id();
         $user = User::findBy(['id'=>$userId])[0][0];
+
         return view('dashboard.index', ['user' => $user]);
     }
     

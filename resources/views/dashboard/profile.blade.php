@@ -1,16 +1,12 @@
 @extends('master.dashboard')
 
-@section('page-title', $user->name . " (@" . $user->username . ")" . " • " . " Profile Settings")
+@section('page-title', $user->name . ' (@' . $user->username . ')' . ' • ' . ' Profile Settings')
 
 @section('page-content')
-    <p>Home Page</p>
-    <p>{{ session('user.role') }}</p>
-    <pre>
-        @php
-            print_r($user);
-        @endphp
-    </pre>
-
-    <a href="{{ route('user.profile', \Auth::user()->username) }}">Profile</a>
-    <a href="{{ url('/logout') }}">Logout</a>
+    <div class="container">
+        <h4>{{ $user->username }}</h4>
+        <p>
+            <strong>{{ $user->name }}</strong>
+        </p>
+    </div>
 @endsection

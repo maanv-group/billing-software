@@ -2,7 +2,7 @@
     <nav class="main-nav navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="{{ route('user.dashboard', \Auth::user()->username) }}">
-                Navbar
+                Dashboard
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,7 +12,8 @@
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <div class="searchinputs">
-                            <form action="{{ route('user.search', \Auth::user()->username) }}" method="get" class="d-flex">
+                            <form action="{{ route('user.search', \Auth::user()->username) }}" method="get"
+                                class="d-flex">
                                 {{-- @csrf --}}
                                 <input type="text" class="form-control" placeholder="Search">
                                 <button type="submit" class="btn">
@@ -66,31 +67,38 @@
                             </svg>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link icon-link" title="Settings" href="#">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
-                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
-                                <circle cx="12" cy="12" r="3"></circle>
-                                <path
-                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
-                                </path>
-                            </svg>
-                        </a>
-                    </li>
                     <li class="nav-item dropdown profile">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             {{ $user->name }}
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="{{ route('user.profile', \Auth::user()->username) }}">Profile</a></li>
                             <li><a class="dropdown-item" href="#">Another action</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
                             <li><a class="dropdown-item" href="#">Something else here</a></li>
                         </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link icon-link text-danger" title="Settings" href="{{ url('/logout') }}">
+                            {{-- <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
+                                <circle cx="12" cy="12" r="3"></circle>
+                                <path
+                                    d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                                </path>
+                            </svg> --}}
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                                <polyline points="16 17 21 12 16 7"></polyline>
+                                <line x1="21" y1="12" x2="9" y2="12"></line>
+                            </svg>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -104,25 +112,27 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <!-- COMPANY -->
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Company
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Company</a></li>
-                            <li><a class="dropdown-item" href="#">Year Create</a></li>
-                            <li><a class="dropdown-item" href="#">Balance Transfer</a></li>
-                            <li><a class="dropdown-item" href="#">Account Group</a></li>
-                            <li><a class="dropdown-item" href="#">User Create</a></li>
-                            <li><a class="dropdown-item" href="#">User Rights</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Books</a></li>
-                            <li><a class="dropdown-item" href="#">Data Refresh</a></li>
-                            <li><a class="dropdown-item" href="#">Data Backup</a></li>
-                        </ul>
-                    </li>
+                    @if ($user->role == 'Super Admin')
+                        <!-- COMPANY -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Company
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Company</a></li>
+                                <li><a class="dropdown-item" href="#">Year Create</a></li>
+                                <li><a class="dropdown-item" href="#">Balance Transfer</a></li>
+                                <li><a class="dropdown-item" href="#">Account Group</a></li>
+                                <li><a class="dropdown-item" href="#">User Create</a></li>
+                                <li><a class="dropdown-item" href="#">User Rights</a></li>
+                                <li><a class="dropdown-item" href="#">Settings</a></li>
+                                <li><a class="dropdown-item" href="#">Books</a></li>
+                                <li><a class="dropdown-item" href="#">Data Refresh</a></li>
+                                <li><a class="dropdown-item" href="#">Data Backup</a></li>
+                            </ul>
+                        </li>
+                    @endif
                     <!-- MASTER -->
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -130,15 +140,13 @@
                             Master
                         </a>
                         <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Book</a></li>
                             <li><a class="dropdown-item" href="#">Party</a></li>
-                            <li><a class="dropdown-item" href="#">Area</a></li>
-                            <li><a class="dropdown-item" href="#">Address</a></li>
                             <li><a class="dropdown-item" href="#">Product</a></li>
                             <li><a class="dropdown-item" href="#">Group</a></li>
                             <li><a class="dropdown-item" href="#">Counter</a></li>
                             <li><a class="dropdown-item" href="#">Item</a></li>
-                            <li><a class="dropdown-item" href="#">Tax</a></li>
-                            <li><a class="dropdown-item" href="#">Salesmen</a></li>
+                            <li><a class="dropdown-item" href="#">Item</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -156,84 +164,40 @@
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">Purchase</a></li>
                             <li><a class="dropdown-item" href="#">Other Purchase</a></li>
-                            <li><a class="dropdown-item" href="#">Tag Cancel</a></li>
+                            <li><a class="dropdown-item" href="#">Purchase Return</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            {{-- <li><a class="dropdown-item" href="#">Tag Cancel</a></li> --}}
                             <li><a class="dropdown-item" href="#">Wholesale Sales</a></li>
                             <li><a class="dropdown-item" href="#">Sales Order</a></li>
-                            <li><a class="dropdown-item" href="#">Delivery Challan</a></li>
                             <li><a class="dropdown-item" href="#">Sales</a></li>
                             <li><a class="dropdown-item" href="#">Sales Return</a></li>
-                            <li><a class="dropdown-item" href="#">Approval Issue</a></li>
-                            <li><a class="dropdown-item" href="#">Approval Return</a></li>
-                            <li><a class="dropdown-item" href="#">Rate Cut</a></li>
-                            <li><a class="dropdown-item" href="#">Old Item Sales</a></li>
-                            <li><a class="dropdown-item" href="#">Labour Work</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Delivery Challan</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            {{-- <li><a class="dropdown-item" href="#">Approval Issue</a></li> --}}
+                            {{-- <li><a class="dropdown-item" href="#">Approval Return</a></li> --}}
+                            {{-- <li><a class="dropdown-item" href="#">Rate Cut</a></li> --}}
+                            {{-- <li><a class="dropdown-item" href="#">Old Item Sales</a></li> --}}
+                            {{-- <li><a class="dropdown-item" href="#">Labour Work</a></li> --}}
                             <li><a class="dropdown-item" href="#">Cash Received</a></li>
                             <li><a class="dropdown-item" href="#">Cash Payment</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="#">Bank Received</a></li>
                             <li><a class="dropdown-item" href="#">Bank Payment</a></li>
-                            <li><a class="dropdown-item" href="#">Contra Entry</a></li>
-                            <li><a class="dropdown-item" href="#">Purchase Return</a></li>
+                            {{-- <li><a class="dropdown-item" href="#">Contra Entry</a></li> --}}
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li>
-                                <hr class="dropdown-divider">
-                            </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link disabled dropdown-toggle" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
                         </a>
                         <ul class="dropdown-menu">
