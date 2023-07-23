@@ -2,13 +2,11 @@
 
 namespace App\Models;
 
-use GuzzleHttp\Psr7\Request;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Contracts\Auth\Authenticatable as AuthAuthenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Hash;
 use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
@@ -36,6 +34,11 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public static function create(array $request){
+        return new User($request);
+    }
+
+
     /**
      * The attributes that should be cast.
      *
@@ -44,14 +47,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
 
-
-    public static function find($requestData){
+    public static function find(array $requestData){
         $response = DB::table('users')->where('username',$requestData['username'])->first();
         return $response;
     }
 
-    public static function findBy($keyValueArray){
+    public static function findBy(array $keyValueArray){
         $response = [];
         foreach ($keyValueArray as $key => $value) {
             array_push($response, DB::table('users')->where($key, $value)->get()->toArray());
