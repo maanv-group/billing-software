@@ -36,8 +36,8 @@ class ChartsController extends Controller
      */
     public function show(Charts $charts)
     {
-        $data = $charts::sendDummy();
-        return ['data' => $data];
+        $chart = $charts::sendDummy();
+        return ['data' => $chart['data'], 'headings' => $chart['headings']];
     }
 
     /**
