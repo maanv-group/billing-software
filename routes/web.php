@@ -31,6 +31,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::group(['prefix'=> '/{user}'], function(){
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('user.dashboard');
         Route::get('/profile', [DashboardController::class, 'profile'])->name('user.profile');
+        Route::get('/help', [DashboardController::class, 'profile'])->name('user.help');
         Route::get('/search', [DashboardController::class, 'profile'])->name('user.search');
         Route::group(['prefix'=>'/settings'], function(){
             Route::get('/', [DashboardController::class, 'profile'])->name('user.settings');

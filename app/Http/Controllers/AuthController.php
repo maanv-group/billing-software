@@ -38,7 +38,6 @@ class AuthController extends Controller
         $this->authenticate($request);
         Mail::send(new NewUserMail());
     }
-
     
     /**
      * authenticate

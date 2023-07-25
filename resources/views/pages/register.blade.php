@@ -1,6 +1,6 @@
 @extends('master.misc')
 
-@section('page-title', 'Login Page')
+@section('page-title', 'Register Page')
 
 @section('page-content')
     <section class="my-5">
