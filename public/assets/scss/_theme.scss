@@ -50,35 +50,35 @@ a {
 }
 
 .btn {
-	&.btn-theme-{
-		@each $key, $value in $colors {
-			&#{$key}-rounded {
-				display: inline-block;
-				border-radius: 3rem;
-				padding: 0.75rem 2rem;
-				background-color: $value;
-				@if ($key == "01" or $key == "02" or $key == "primary") {
-					color: $theme-white;
-				}
-				&:hover {
-					background-color: $value;
-					color: inherit;
-				}
-			}
-			&#{$key}-rounded-outlined {
-				display: inline-block;
-				border: 1px solid $theme-white;
-				border-radius: 3rem;
-				padding: 0.75rem 2rem;
-				color: $theme-white;
-				&:hover {
-					border: 1px solid $value;
-					color: inherit;
-					background-color: $value;
-				}
-			}
-		}
-	}
+    &.btn-theme- {
+        @each $key, $value in $colors {
+            &#{$key}-rounded {
+                display: inline-block;
+                border-radius: 3rem;
+                padding: 0.75rem 2rem;
+                background-color: $value;
+                @if ($key == "01" or $key == "02" or $key == "primary") {
+                    color: $theme-white;
+                }
+                &:hover {
+                    background-color: $value;
+                    color: inherit;
+                }
+            }
+            &#{$key}-rounded-outlined {
+                display: inline-block;
+                border: 1px solid $theme-white;
+                border-radius: 3rem;
+                padding: 0.75rem 2rem;
+                color: $theme-white;
+                &:hover {
+                    border: 1px solid $value;
+                    color: inherit;
+                    background-color: $value;
+                }
+            }
+        }
+    }
 }
 
 .search-engine {
@@ -247,6 +247,17 @@ a {
         }
         .accordion-button[aria-expanded="false"] {
             border-color: transparent;
+        }
+    }
+}
+
+main {
+    .cart-accordion {
+        .accordion-item {
+            font-size: 14px;
+            h5 {
+                font-size: 18px;
+            }
         }
     }
 }

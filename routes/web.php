@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\OrdersController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\PaymentsController;
 use Illuminate\Support\Facades\Route;
@@ -30,12 +31,12 @@ Route::get('/logout', [AuthController::class, 'unauthenticated']);
  * Controllers: CartController
  * Models: ServiceModel, CartModel
 */
-/* 
+
 Route::group(['prefix' => '/cart'], function () {
-    Route::get('/', [OrdersController::class, 'index']);
-    Route::get('/checkout', [OrdersController::class, 'index']);
+    Route::get('/', [OrdersController::class, 'cart']);
+    // Route::get('/checkout', [OrdersController::class, 'index']);
 });
-*/
+
 
 /**
  * -----------------------------------
