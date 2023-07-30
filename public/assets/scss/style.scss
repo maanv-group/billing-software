@@ -1,13 +1,140 @@
-.alert{
-    .alert-link{
+@import "_base";
+
+.alert {
+    .alert-link {
         text-decoration: none;
     }
 }
 
-main{
-    &#miscelleneous{
-        .error_heading{
-            font-size: calc(max(15vw, 2.5rem));
+main {
+    section {
+        .section-title {
+            margin-bottom: 1rem;
+            h2 {
+                color: $brand-color;
+                margin-bottom: 0.5rem;
+            }
+        }
+        &#hero {
+            background-color: $theme-01;
+            color: $theme-white;
+            .text-content {
+                .hero-text {
+                    padding: 1rem 0;
+                    h1 {
+                        margin-bottom: 0.5rem;
+                    }
+                    p {
+                        padding: 1rem 0;
+                    }
+                }
+            }
+            .counter {
+                .count-card {
+                    .count {
+                        h3 {
+                            font-size: 2.5rem;
+                        }
+                    }
+                    .count-label {
+                        label {
+                        }
+                    }
+                }
+            }
+        }
+        &#services {
+            .services-title {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                .categories {
+                    .nav-tabs {
+                        border-bottom: 0;
+                        gap: 0.5rem;
+                        .nav-item {
+                            .nav-link {
+                                padding: 0.5rem 2rem;
+                                border-radius: 4rem;
+                                color: $theme-01-black;
+                                font-weight: 500;
+                                &.active {
+                                    border: 1px solid
+                                        darken(
+                                            $color: $theme-white,
+                                            $amount: 10
+                                        );
+                                    color: $brand-color;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .services_List {
+                padding: 2rem 0;
+            }
+        }
+        &#projects {
+            .projects_List {
+                padding: 2rem 0;
+            }
+        }
+
+        &#for-clients,
+        &#for-freelancers {
+            .steps {
+                .step {
+                    background-color: darken(
+                        $color: $theme-light-shade,
+                        $amount: 10
+                    );
+                    padding: 1rem;
+                    border-radius: 1rem;
+                    height: 100%;
+                    .icon {
+                        font-size: 4rem;
+                        margin-bottom: 1rem;
+                        position: relative;
+                        width: fit-content;
+                        &::after {
+                            content: "";
+                            z-index: 1;
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            border-radius: 50%;
+                            width: 2rem;
+                            aspect-ratio: 1;
+                            background-color: $theme-dark-accent-01;
+                        }
+                        i {
+                            position: relative;
+                            width: fit-content;
+                            z-index: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &#miscelleneous {
+        background-color: white;
+        min-height: 100vh;
+        .error_content {
+            .error_heading {
+                font-size: calc(max(15vw, 2.5rem));
+                font-weight: 700;
+                span {
+                    color: $theme-primary;
+                }
+            }
+        }
+    }
+    &.gig_Detailed {
+        header {
+            padding: 1.5rem 0;
         }
     }
 }

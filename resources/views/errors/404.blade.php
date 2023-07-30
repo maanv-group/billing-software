@@ -2,22 +2,30 @@
 
 @section('page-title', '404 Error!')
 @section('page-content')
+
     <main id="miscelleneous">
-        <div class="container">
-            <div class="row m-0">
-                <div class="col-md-6"></div>
-                <div class="col-md-6">
-                    <h1 class="error_heading">
-                        <span>4</span>0<span>4</span>
-                    </h1>
-                    <h2>
-                        Oops! It looks like you're lost.
-                    </h2>
-                    <p>
-                        The page you're looking for isn't available. Try to search again or use the go to.
-                    </p>
+        <section class="error_content">
+            <div class="row m-0 g-0 justify-content-center">
+                <div class="col-xxl-8 col-xl-9 col-md-10 col-12">
+                    <div class="row m-0 align-items-center">
+                        <div class="col-md-6 col-12">
+                            <img src="{{ asset('assets/media/error.jpg') }}" alt="" class="w-100">
+                        </div>
+                        <div class="col-md-6 col-12">
+                            <h1 class="error_heading">
+                                <span>4</span>0<span>4</span>
+                            </h1>
+                            <h2>
+                                Oops! It looks like you're lost.
+                            </h2>
+                            <p>
+                                The page you're looking for isn't available. Try to search again or use the go to.
+                            </p>
+                            <a href="{{ url('/')}}" class="btn btn-theme-primary-rounded">Home</a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 @endsection

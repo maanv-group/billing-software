@@ -1,0 +1,29 @@
+footer{
+    background-color: $theme-dark-shade-01;
+    color: $theme-light-shade;
+    .footer-subnav{
+        background-color: darken($color: $theme-dark-shade-01, $amount: 10);
+        .nav-text,
+        .nav-link{
+            color: $theme-light-shade;
+        }
+    }
+    .footer-linkset{
+        padding-top: 2rem;
+        li{
+            &:not(:has(a)){
+                font-weight: 500;
+                font-size: 1.2rem;
+                color: $theme-light-shade;
+                margin-bottom: 0.5rem;
+            }
+            a{
+                color: rgba($color: $theme-light-shade, $alpha: 0.5);
+                &:active,
+                &:hover{
+                    color: $theme-light-shade;
+                }
+            }
+        }
+    }
+}

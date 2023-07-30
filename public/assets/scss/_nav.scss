@@ -1,0 +1,48 @@
+nav.navbar {
+	padding: 0;
+	background-color: $theme-01;
+	color: $theme-white;
+	.navbar-brand {
+		img {
+			height: 70px;
+			width: auto;
+            padding: 0.65rem;
+		}
+	}
+	ul.navbar-nav {
+		.dropdown-menu.megamenu {
+			min-width: 68vw;
+			left: -200%;
+			padding: 2rem;
+		}
+		.nav-item {
+			padding: 0.75rem;
+            &.categories{
+                .nav-link{
+                    background-color: lighten($color: $theme-01, $amount: 5);
+                    border-radius: 3rem;
+                    padding: 0.5rem 1.5rem;
+                }
+                .dropdown-toggle::after{
+                    display: none;
+                }
+            }
+			.nav-link {
+				color: $theme-white;
+				&.active,
+				&:active,
+				&:hover,
+				&:focus {
+					color: $brand-color;
+				}
+
+                &.sign-up{
+                    background-color: $theme-white;
+                    color: $theme-01-black;
+                    border-radius: 3rem;
+                    padding: 0.5rem 1.5rem;
+                }
+			}
+		}
+	}
+}
