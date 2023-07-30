@@ -3,8 +3,10 @@ nav.navbar {
 	background-color: $theme-01;
 	color: $theme-white;
 	.navbar-brand {
+		color: $theme-white;
+		font-size: 1.5rem;
 		img {
-			height: 70px;
+			height: 60px;
 			width: auto;
             padding: 0.65rem;
 		}

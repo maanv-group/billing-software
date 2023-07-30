@@ -120,8 +120,8 @@ main {
     }
 
     &#miscelleneous {
+		padding: calc(max(10vh, 2rem)) 0;
         background-color: white;
-        min-height: 100vh;
         .error_content {
             .error_heading {
                 font-size: calc(max(15vw, 2.5rem));

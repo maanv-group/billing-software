@@ -2,7 +2,9 @@
 
 @section('page-title', '404 Error!')
 @section('page-content')
-
+    <header>
+        @includeIf('components.basenav')
+    </header>
     <main id="miscelleneous">
         <section class="error_content">
             <div class="row m-0 g-0 justify-content-center">
@@ -21,11 +23,14 @@
                             <p>
                                 The page you're looking for isn't available. Try to search again or use the go to.
                             </p>
-                            <a href="{{ url('/')}}" class="btn btn-theme-primary-rounded">Home</a>
+                            <a href="{{ url('/') }}" class="btn btn-theme-primary-rounded">Home</a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
     </main>
+    <footer>
+        @includeIf('components.footer')
+    </footer>
 @endsection
