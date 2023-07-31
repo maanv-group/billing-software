@@ -30,17 +30,19 @@
 
 ## About The Project
 
-![Screen Shot](https://www.bootstrapdash.com/blog/wp-content/uploads/2023/07/1437d406-781f-4eda-bf5c-fa749d1d5bb1.png)
+![Screenshot Cart](https://github.com/maanv-group/billing-software/assets/63121855/49621cc7-8b2f-4354-b69f-9ecf8dd94673)
 
-There are many great ERP Systems out there but I need to develop my own ERP System from scratch, so as to customize the modules as per my requirements.
+![Screenshot Dashboard](https://www.bootstrapdash.com/blog/wp-content/uploads/2023/07/1437d406-781f-4eda-bf5c-fa749d1d5bb1.png)
 
-Here's whyyou should consider this ERP Project:
+There are many great ERP Systems out there but I need to develop my own ERP System from scratch to customize the modules as per my requirements.
 
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
+Here's why you should consider this ERP Project:
+
+* Your time should be focused on creating something incredible. A project that solves a problem and helps others
 * You shouldn't be doing the same tasks over and over like creating a README from scratch
 * You should element DRY principles to the rest of your life :smile:
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue.
+Of course, no one template will serve all projects since your needs may be different. So I'll be adding more shortly. You may also suggest changes by forking this repo, creating a pull request, or opening an issue.
 
 A list of commonly used resources that I find helpful is listed in the acknowledgments.
 
